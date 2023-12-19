@@ -4,9 +4,8 @@ import os
 import schedule
 from datetime import datetime
 
-source_dir = '/Users/markaxelus/Documents'
-dest_dir = '/Users/markaxelus/Documents/backup_folder'
-current_date = datetime.now().strftime("%Y-%m-%d")
+source_dir = ''
+dest_dir = ''
 os.makedirs(dest_dir, exist_ok=True)
 
 def automatic_backup(source, dest):
@@ -23,7 +22,7 @@ def automatic_backup(source, dest):
         else:
             shutil.copy2(s,d)
 
-schedule.every().day.at("19:10").do(lambda: automatic_backup(source_dir, dest_dir))
+schedule.every().day.at("18:00").do(lambda: automatic_backup(source_dir, dest_dir))
 
 while True:
     schedule.run_pending()

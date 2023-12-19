@@ -23,7 +23,7 @@ def automatic_backup(source, dest):
         else:
             shutil.copy2(s,d)
 
-schedule.every().day.at("18:00").do(lambda: automatic_backup(source_dir, dest_dir))
+schedule.every().day.at("19:10").do(lambda: automatic_backup(source_dir, dest_dir))
 
 while True:
     schedule.run_pending()
